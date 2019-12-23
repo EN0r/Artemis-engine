@@ -1,0 +1,13 @@
+﻿  graphics.cpp
+D:\Code\Artemis\Artemis\graphics.cpp(22,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Code\Artemis\Artemis\graphics.cpp(23,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Code\Artemis\Artemis\graphics.cpp(24,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Code\Artemis\Artemis\graphics.cpp(25,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Code\Artemis\Artemis\graphics.cpp(36,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Code\Artemis\Artemis\graphics.cpp(37,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Code\Artemis\Artemis\graphics.cpp(38,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+  Window.cpp
+  Generating Code...
+D:\Code\Artemis\Artemis\graphics.cpp(39,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Artemis.vcxproj -> D:\Code\Artemis\Debug\Artemis.exe
