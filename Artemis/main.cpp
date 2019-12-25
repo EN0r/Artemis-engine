@@ -1,7 +1,6 @@
 #include "Window.h"
 #include "graphics.h"
 #include "game.h"
-
 /*
 
 	PERSONAL NOTE TO SELF:
@@ -18,12 +17,11 @@ int main(int argc, char* argv[])
 
 	window* _window = new window;
 
-	// grab graphics instance
+	// grab game instance
 
-	graphics* _graphics = new graphics;
-
+	game* _game = new game;
+	
 	// sdl based variables
-
 
 
 
@@ -41,10 +39,15 @@ int main(int argc, char* argv[])
 	SDL_Event windowEvent;
 	SDL_Window* window = _window->createWindow("xd",800,600);
 	SDL_Renderer* _renderer = SDL_CreateRenderer(window, -1, 0);
+	SDL_GLContext _context = SDL_GL_CreateContext(window);
 
+	delete _window;
+
+	_game->Start(_renderer);
 
 	while (true)
 	{
+
 
 		if (SDL_PollEvent(&windowEvent))
 		{
@@ -61,9 +64,11 @@ int main(int argc, char* argv[])
 		}
 
 
-
-		_graphics->drawText(_renderer, "Hello world!", 0, 0, 10, 10, color);
+		// game loop
 		SDL_RenderPresent(_renderer);
+		_game->Update(_renderer,_context);
+		
+		
 	}
 	
 

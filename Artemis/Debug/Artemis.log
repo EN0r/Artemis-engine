@@ -1,13 +1,17 @@
-﻿  graphics.cpp
-D:\Code\Artemis\Artemis\graphics.cpp(22,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Code\Artemis\Artemis\graphics.cpp(23,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Code\Artemis\Artemis\graphics.cpp(24,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Code\Artemis\Artemis\graphics.cpp(25,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Code\Artemis\Artemis\graphics.cpp(36,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Code\Artemis\Artemis\graphics.cpp(37,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Code\Artemis\Artemis\graphics.cpp(38,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  main.cpp
-  Window.cpp
-  Generating Code...
-D:\Code\Artemis\Artemis\graphics.cpp(39,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+﻿  game.cpp
+D:\Code\Artemis\Artemis\guiMain.h(71,60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(71,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(71,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(71,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(152,103): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(152,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(152,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(152,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(176,103): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(176,85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(176,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(176,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\game.cpp(49,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\game.cpp(49,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Code\Artemis\Artemis\guiMain.h(198): warning C4715: 'artemisFrame::createElement': not all control paths return a value
   Artemis.vcxproj -> D:\Code\Artemis\Debug\Artemis.exe

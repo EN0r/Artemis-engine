@@ -136,8 +136,14 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="collisionFunctions.h" />
+    <ClInclude Include="collisionHandler.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="graphics.h" />
+    <ClInclude Include="guiMain.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="layerHandler.h" />
+    <ClInclude Include="vector2.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>

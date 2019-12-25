@@ -4,7 +4,6 @@
 SDL_Window* window::createWindow(const char* _windowName, int _screenWidth, int _screenHeight)
 {
 	SDL_Window* wind = SDL_CreateWindow(_windowName,SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, _screenWidth,_screenHeight,SDL_WINDOW_SHOWN);
-
 	if (wind == nullptr )
 	{
 		return NULL;

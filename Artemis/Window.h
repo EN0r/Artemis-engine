@@ -9,11 +9,11 @@ private:
 
 	
 	SDL_Window* _window;
-
+	
 
 public:
 	
-	
+	SDL_GLContext _context;
 	
 	SDL_Window* getWindow() { return _window; }; // Returns window
 

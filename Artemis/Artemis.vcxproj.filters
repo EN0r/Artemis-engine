@@ -46,6 +46,18 @@
     <Filter Include="Source Files\gameLoop">
       <UniqueIdentifier>{4fdffce8-1c86-446e-8a4d-e60ed272620d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Input">
+      <UniqueIdentifier>{a75f80db-3ba0-4caf-b29e-5bc058472c17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\globals">
+      <UniqueIdentifier>{ed08cb28-8bd7-4eb4-9ed6-d22a7532a212}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\guiLibrary">
+      <UniqueIdentifier>{2726b7b7-0e69-4590-8f1e-45ceda8daa93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\renderLayer">
+      <UniqueIdentifier>{40461e18-aefa-4b7d-bd0e-ff1c2c92d6cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -70,6 +82,24 @@
     </ClInclude>
     <ClInclude Include="game.h">
       <Filter>Header Files\gameLoop</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="collisionHandler.h">
+      <Filter>Header Files\globals</Filter>
+    </ClInclude>
+    <ClInclude Include="guiMain.h">
+      <Filter>Header Files\guiLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="collisionFunctions.h">
+      <Filter>Header Files\globals</Filter>
+    </ClInclude>
+    <ClInclude Include="layerHandler.h">
+      <Filter>Header Files\renderLayer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

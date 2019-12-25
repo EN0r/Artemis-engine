@@ -30,6 +30,18 @@ void graphics::drawText(SDL_Renderer* _renderer, const char* Text,float x, float
 	SDL_FreeSurface(surfaceMessage);
 
 }
+
+void graphics::fillRect(SDL_Renderer* _renderer, SDL_Rect* pos, SDL_Color color)
+{
+	window* _instance = new window;
+	_instance->setDrawColor(_renderer, color.r, color.b, color.g, color.a);
+
+	SDL_RenderFillRect(_renderer,pos);
+
+	delete _instance;
+
+}
+
 void graphics::drawRect(SDL_Renderer* _renderer ,float x, float y, float w, float h,int r,int g,int b,int a)
 {
 	SDL_Rect* size = new SDL_Rect;
