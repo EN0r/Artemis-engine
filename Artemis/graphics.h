@@ -3,7 +3,7 @@
 #include "window.h"
 #include "SDL_ttf.h"
 
-class graphics
+class graphics // this class is relatively obsolete and will get eventually removed
 {
 private:
 
@@ -20,7 +20,7 @@ public:
 	void drawText(SDL_Renderer* _renderer, const char* Text, float x, float y, float w, float h, SDL_Color color);
 
 
-	void renderSprite(SDL_Surface* image);
+	
 
 };
 

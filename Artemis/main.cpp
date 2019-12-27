@@ -37,9 +37,8 @@ int main(int argc, char* argv[])
 	
 
 	SDL_Event windowEvent;
-	SDL_Window* window = _window->createWindow("xd",800,600);
+	SDL_Window* window = _window->createWindow("xd",900,700);
 	SDL_Renderer* _renderer = SDL_CreateRenderer(window, -1, 0);
-	SDL_GLContext _context = SDL_GL_CreateContext(window);
 
 	delete _window;
 
@@ -66,7 +65,7 @@ int main(int argc, char* argv[])
 
 		// game loop
 		SDL_RenderPresent(_renderer);
-		_game->Update(_renderer,_context);
+		_game->Update(_renderer);
 		
 		
 	}

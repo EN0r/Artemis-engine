@@ -43,9 +43,6 @@
     <Filter Include="Header Files\gameLoop">
       <UniqueIdentifier>{d357b933-44fb-40e9-bcf1-6a0ed5b843ea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gameLoop">
-      <UniqueIdentifier>{4fdffce8-1c86-446e-8a4d-e60ed272620d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Input">
       <UniqueIdentifier>{a75f80db-3ba0-4caf-b29e-5bc058472c17}</UniqueIdentifier>
     </Filter>
@@ -58,11 +55,17 @@
     <Filter Include="Header Files\renderLayer">
       <UniqueIdentifier>{40461e18-aefa-4b7d-bd0e-ff1c2c92d6cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gameLoop/main">
+      <UniqueIdentifier>{4fdffce8-1c86-446e-8a4d-e60ed272620d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\glm">
+      <UniqueIdentifier>{df263888-0a97-4856-b457-153740e71165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\networking">
+      <UniqueIdentifier>{924dd00e-e01e-46e7-a132-46b4f6e28bd6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Window.cpp">
       <Filter>Source Files\windowClass</Filter>
     </ClCompile>
@@ -70,7 +73,10 @@
       <Filter>Source Files\graphics</Filter>
     </ClCompile>
     <ClCompile Include="game.cpp">
-      <Filter>Source Files\gameLoop</Filter>
+      <Filter>Source Files\gameLoop/main</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\gameLoop/main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,9 +92,6 @@
     <ClInclude Include="input.h">
       <Filter>Header Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="vector2.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
     <ClInclude Include="collisionHandler.h">
       <Filter>Header Files\globals</Filter>
     </ClInclude>
@@ -101,10 +104,48 @@
     <ClInclude Include="layerHandler.h">
       <Filter>Header Files\renderLayer</Filter>
     </ClInclude>
+    <ClInclude Include="sprite.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2.h">
+      <Filter>Header Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>Header Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="vec4.h">
+      <Filter>Header Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="glm.h">
+      <Filter>Header Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="vec1.h">
+      <Filter>Header Files\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="tileMap.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="spriteSheets.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="animFlipbook.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="rigidBody.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="C:\Users\fanfr\AppData\Local\Temp\Rar%24DRa16728.11370\font.ttf">
       <Filter>Assets\Fonts</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Sprites\firstTexture.jpg">
+      <Filter>Assets\Sprites</Filter>
+    </Image>
   </ItemGroup>
 </Project>
