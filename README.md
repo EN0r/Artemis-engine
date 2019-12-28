@@ -17,6 +17,6 @@ To utilize the ECS you need to create a new `_system` object. With this system o
 `_System->addComponent<COMPONENTTYPE>(entityToAddTo,ComponentObject);` with this function you can add a component to the entity and to
 get the component you can use `COMPONENTTYPE component = _System->getComponent<COMPONENTTYPE>(entityToAddTo,ComponentObject)`
 
-##WARNING
+## WARNING
 
 This engine is very early in development and you WILL experience bugs with this, Eventually the bugs will be sweeped out and new components will be added to the engine.
