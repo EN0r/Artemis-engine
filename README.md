@@ -20,3 +20,5 @@ get the component you can use `COMPONENTTYPE component = _System->getComponent<C
 ## WARNING
 
 This engine is very early in development and you WILL experience bugs with this, Eventually the bugs will be sweeped out and new components will be added to the engine.
+
+Also, the GUI Library will be deprecated soon. I will post a update on this soon.
