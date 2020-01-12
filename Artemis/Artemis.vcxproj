@@ -79,6 +79,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\SDL2_ttf-2.0.15\include;C:\SDL2_mixer-2.0.4\include;C:\SDL2-2.0.10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,6 +108,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\SDL2_ttf-2.0.15\include;C:\SDL2_mixer-2.0.4\include;C:\SDL2-2.0.10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,23 +141,29 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animFlipbook.h" />
+    <ClInclude Include="collider.h" />
     <ClInclude Include="collisionFunctions.h" />
-    <ClInclude Include="collisionHandler.h" />
+    <ClInclude Include="controllerSupport.h" />
     <ClInclude Include="ECS.h" />
+    <ClInclude Include="editor.h" />
     <ClInclude Include="game.h" />
-    <ClInclude Include="glm.h" />
     <ClInclude Include="graphics.h" />
     <ClInclude Include="guiMain.h" />
+    <ClInclude Include="guiManager.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="kbdHook.h" />
+    <ClInclude Include="kinematicBody.h" />
     <ClInclude Include="layerHandler.h" />
-    <ClInclude Include="rigidBody.h" />
+    <ClInclude Include="mouse.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="settings.h" />
+    <ClInclude Include="text.h" />
+    <ClInclude Include="vec2.h" />
     <ClInclude Include="sprite.h" />
     <ClInclude Include="spriteSheets.h" />
+    <ClInclude Include="tile.h" />
     <ClInclude Include="tileMap.h" />
-    <ClInclude Include="vec1.h" />
-    <ClInclude Include="vec2.h" />
-    <ClInclude Include="vec3.h" />
-    <ClInclude Include="vec4.h" />
+    <ClInclude Include="uiComponents.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>

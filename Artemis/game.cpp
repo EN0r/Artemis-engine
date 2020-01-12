@@ -54,6 +54,7 @@ void game::Update(SDL_Renderer* _renderer)
 	
 	_layer->mapLayer(_renderer);
 	_layer->spriteLayer(_renderer);
+	_layer->playerLayer(_renderer);
 	_layer->textLayer(_renderer);
 	_layer->drawLayer(_renderer);
 	_layer->uiLayer(_renderer);
@@ -63,10 +64,10 @@ void game::Update(SDL_Renderer* _renderer)
 
 }
 
-void game::Start(SDL_Renderer* _renderer)
+void game::Start(SDL_Renderer* _renderer, SDL_Window* _window)
 {
 	// usually we need to init/Load the sprite data into the component
-	_layer->start(_renderer);
+	_layer->start(_renderer,_window);
 
 
 }

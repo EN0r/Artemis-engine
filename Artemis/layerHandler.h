@@ -7,14 +7,31 @@
 #include "ECS.h"
 #include "windows.h"
 #include "spriteSheets.h"
+#include "collider.h"
+#include "animFlipbook.h"
+#include "kinematicBody.h"
+#include "Player.h"
+#include "kbdHook.h"
+#include "uiComponents.h"
+#include "tileMap.h"
+#include "mouse.h"
 
-pool* _entPool = new pool;
 
-entity* _ent = new entity;
-_system* _sys = new _system; // the god itself.. he controls all entities that will be or ever be.
-sprite* _sprite = new sprite;
-SDL_Rect* pos = new SDL_Rect;
 
+
+_system* _sys = new _system;
+entity* playerE;
+entity* floor1;
+sprite* _playerSprite;
+Keyboard hook;
+sprite* _groundSprite;
+kinematicBody* kinematic;
+player* playerCharacter;
+tileMap* t;
+animationTrack* aTrack = new animationTrack;
+mouse m;
+
+bool grounded;
 
 class layers
 {
@@ -22,57 +39,147 @@ class layers
 
 public:
 
+	SDL_Window* wind;
+
 	void mapLayer(SDL_Renderer* _renderer);
 	void textLayer(SDL_Renderer* _renderer);
 	void drawLayer(SDL_Renderer* _renderer);
 	void uiLayer(SDL_Renderer* _renderer);
 	void spriteLayer(SDL_Renderer* _renderer);
-	void start(SDL_Renderer* _renderer);
+	void start(SDL_Renderer* _renderer,SDL_Window* window);
+	void playerLayer(SDL_Renderer* _renderer);
+	void end();
 };
 
-void layers::start(SDL_Renderer* _renderer)
+
+// info each sprite roughly takes 3mb of memory
+entity* _groundEnt;
+void layers::start(SDL_Renderer* _renderer, SDL_Window* window)
 { 
+	wind = window;
 
-	// first texture
-	_sys->addComponent<sprite>(_ent,_sprite);
-	_sprite = _sys->getComponent<sprite>(_ent, _sprite);
-	_sprite->loadSprite(_renderer, "Assets/Sprites/firstTexture.jpg");
+	playerE = new entity;
+	floor1 = new entity;
+	_playerSprite = new sprite(playerE);
+	_groundSprite = new sprite(floor1);
 
-	pos->x = 500;
-	pos->y = 500;
-	pos->w = 500;
-	pos->h = 500;
+	t = new tileMap(_renderer);
 
-	// tilemap test
+	playerE->w = 160;
+	playerE->h = 160;
+	playerE->x = 100;
+	playerE->y = 100;
+
+	floor1->x = 0;
+	floor1->y = 500;
+	floor1->w = 1000;
+	floor1->h = 100;
 	
-	// make new entity of spriteSheet
+	//init
+	t->tileGrid(_renderer);
+	hook.initHook();
+	playerCharacter = new player(playerE);
+	_sys->addComponent<sprite>(playerE,_playerSprite);
+	_sys->getComponent<sprite>(playerE, _playerSprite)->loadSprite(_renderer,"Assets/Sprites/Animations/Idle/idle.png");
+	kinematic = new kinematicBody(_playerSprite);
+	_sys->addComponent<kinematicBody>(playerE,kinematic);
 
-	
+	// add sprite to ground entity
+	_sys->addComponent<sprite>(floor1, _groundSprite);
+	_sys->getComponent<sprite>(floor1, _groundSprite)->loadSprite(_renderer, "Assets/Sprites/Tiles/Dirtsingle.png");
 	
 
-	// make add a component to the entity of type spriteSheet
+	playerCharacter->health = 100;
 
-	//_sys->addComponent<spriteSheet>(_spriteEntity, _sheet);
-	//_sheet = _sys->getComponent<spriteSheet>(_spriteEntity, _sheet);
-	//_sheet->initSpriteSheet("Assets/Sprites/tileset.png");
-	//_sheet->createCells();
-	// get the component and store it as _spriteSheet
-	
 }
+
 
 void layers::mapLayer(SDL_Renderer* _renderer)
 {
 
 }
 
+int spawnpointx = 50;
+int spawnpointy = 0;
+
+
+
+void layers::playerLayer(SDL_Renderer* _renderer)
+{
+	_playerSprite->drawSprite(_renderer);
+
+
+	playerE->initEnt();
+}
+
 void layers::spriteLayer(SDL_Renderer* _renderer)
 {	
-	_ent->setName("testEntity");
-	
-	
-//	_sheet->renderCell(_renderer,1,200,200);
-	_sprite->drawSprite(_renderer);
+//	_ent->setName("testEntity");
+//	
+//		std::cout << keyDown << std::endl;
 
+	//Implement gravity
+
+	if (!AABB(floor1->thisSz,playerE->thisSz))
+	{	
+		playerE->y = playerE->y + 0.3;
+		grounded = false;
+	}
+	if (AABB(floor1->thisSz, playerE->thisSz))
+	{
+		grounded = true;
+	}
+
+	if (findInMap("d"))
+	{
+		_playerSprite->flip = SDL_FLIP_NONE;
+		playerE->x = playerE->x + 0.5;
+
+	}
+
+	if (findInMap("a"))
+	{
+		_playerSprite->flip = SDL_FLIP_HORIZONTAL;
+		playerE->x = playerE->x - 0.5;
+	}
+
+	if (findInMap("1"))
+	{
+		playerCharacter->health = 0;
+	}
+
+	if (playerE->y > 1500)
+	{
+		playerE->y = spawnpointy;
+		playerE->x = spawnpointx;
+	}
+	
+	if (findInMap("space") && grounded == true)
+	{
+		float t = 10;
+		float njp = playerCharacter->jumpPower / t;
+		for (size_t i = 0; i < t; i++)
+		{
+			playerE->y = playerE->y - njp;
+		}
+	}
+	
+
+	// check if player is D-E-A-D
+
+	if (playerCharacter->health <= 0)
+	{
+
+		playerCharacter->gameOver(_renderer,_playerSprite);
+	}
+
+
+	
+	_groundSprite->drawSprite(_renderer);
+	
+
+	floor1->initEnt();
+	playerE->initEnt();
 }
 
 void layers::textLayer(SDL_Renderer* _renderer)

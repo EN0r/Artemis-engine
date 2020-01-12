@@ -58,11 +58,17 @@
     <Filter Include="Source Files\gameLoop/main">
       <UniqueIdentifier>{4fdffce8-1c86-446e-8a4d-e60ed272620d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\glm">
-      <UniqueIdentifier>{df263888-0a97-4856-b457-153740e71165}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\networking">
       <UniqueIdentifier>{924dd00e-e01e-46e7-a132-46b4f6e28bd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\scripts">
+      <UniqueIdentifier>{3157a947-5cd4-423c-94c9-65b2008b3d8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\required">
+      <UniqueIdentifier>{82ebbfd1-698b-4090-b216-36a95c6d31fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Editor">
+      <UniqueIdentifier>{63f9f1b9-79d8-4399-90c3-bff7dbb281d8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -92,9 +98,6 @@
     <ClInclude Include="input.h">
       <Filter>Header Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="collisionHandler.h">
-      <Filter>Header Files\globals</Filter>
-    </ClInclude>
     <ClInclude Include="guiMain.h">
       <Filter>Header Files\guiLibrary</Filter>
     </ClInclude>
@@ -110,21 +113,6 @@
     <ClInclude Include="ECS.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
-    <ClInclude Include="vec2.h">
-      <Filter>Header Files\glm</Filter>
-    </ClInclude>
-    <ClInclude Include="vec3.h">
-      <Filter>Header Files\glm</Filter>
-    </ClInclude>
-    <ClInclude Include="vec4.h">
-      <Filter>Header Files\glm</Filter>
-    </ClInclude>
-    <ClInclude Include="glm.h">
-      <Filter>Header Files\glm</Filter>
-    </ClInclude>
-    <ClInclude Include="vec1.h">
-      <Filter>Header Files\glm</Filter>
-    </ClInclude>
     <ClInclude Include="tileMap.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
@@ -134,8 +122,44 @@
     <ClInclude Include="animFlipbook.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
-    <ClInclude Include="rigidBody.h">
+    <ClInclude Include="kinematicBody.h">
       <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="collider.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\scripts</Filter>
+    </ClInclude>
+    <ClInclude Include="kbdHook.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="uiComponents.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="controllerSupport.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="vec2.h">
+      <Filter>Header Files\required</Filter>
+    </ClInclude>
+    <ClInclude Include="mouse.h">
+      <Filter>Header Files\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="settings.h">
+      <Filter>Header Files\globals</Filter>
+    </ClInclude>
+    <ClInclude Include="editor.h">
+      <Filter>Header Files\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="guiManager.h">
+      <Filter>Header Files\guiLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="text.h">
+      <Filter>Header Files\Editor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

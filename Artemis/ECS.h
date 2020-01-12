@@ -1,12 +1,13 @@
 #pragma once
 #include <iostream>
-
+#include <vector>
 // Need a pool
+
+// not a real ECS but it just works without any memory issues.
 
 class pool // only want 1 pool ever declared in whole code.
 {
 	int amount;
-
 public:
 	virtual ~pool() = default;
 
@@ -19,16 +20,37 @@ public:
 class entity : public pool // Multiple can exist
 {
 	
-	const char* name;
-	int x, y;
+	const char* name = "entity";
+
 public:
+
+	SDL_Rect* thisSz = new SDL_Rect;
+	float x = 0.0f; // both of these are defaulted at /NULLPTR
+	float y = 0.0f;
+
+	//default to 16
+	int w = 16;
+	int h = 16;
+	
+
+	// enable/disable coll
+	bool canCollide = true; // true is default
+	
 	// need a vector of components instead of names 0_0
 	std::vector<const char*> componentList; // component name
 	// need to remove these sooner or later due to it not following ECS format.
 	void setName(const char* N) { this->name = N; }
 	const char* getName() { return this->name; }
+	void initEnt();
 };
 
+void entity::initEnt()
+{
+	thisSz->x = x;
+	thisSz->y = y;
+	thisSz->w = w;
+	thisSz->h = h;
+}
 // Need's components to be added to entity
 
 /*

@@ -2,7 +2,9 @@
 #include <iostream>
 window* wind;
 
-void graphics::drawText(SDL_Renderer* _renderer, const char* Text,float x, float y, float w, float h, SDL_Color color)
+// graphics is deprecated
+
+void graphics::drawText(SDL_Renderer* _renderer, const char* Text,float x, float y, float w, float h, SDL_Color color) // make this not so laggy and shit
 {
 
 	TTF_Font* font = TTF_OpenFont("Fonts/OpenSans-Regular.ttf", 25);
